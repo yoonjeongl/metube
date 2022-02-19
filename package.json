@@ -1,0 +1,27 @@
+{
+  "name": "metube",
+  "version": "1.0.0",
+  "description": "\"The best way to watch videos.\"",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonjeongl/metube.git"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "author": "Yoong <goyoong33@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoonjeongl/metube/issues"
+  },
+  "homepage": "https://github.com/yoonjeongl/metube#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  }
+}
