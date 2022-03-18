@@ -1,3 +1,4 @@
+import "./db";
 import express from "express";
 import morgan from "morgan"; // MiddleWare. Logger.
 import globalRouter from "./routers/globalRouter";
