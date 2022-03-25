@@ -1,9 +1,10 @@
 import express from "express";
 import morgan from "morgan"; // MiddleWare. Logger.
+import session from "express-session";
 import rootRouter from "./routers/rootRouter";
 import videoRouter from "./routers/videoRouter";
 import userRouter from "./routers/userRouter";
-import session from "express-session";
+import { localsMiddleware } from "./middlewares";
 
 const app = express();
 const logger = morgan("dev"); // more options like common, combined, etc
@@ -20,6 +21,7 @@ app.use(session({
     })
 );
 
+app.use(localsMiddleware);
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
