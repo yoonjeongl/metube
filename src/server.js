@@ -1,3 +1,4 @@
+require("dotenv").config();
 import express from "express";
 import morgan from "morgan"; // MiddleWare. Logger.
 import session from "express-session";
