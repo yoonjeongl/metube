@@ -7,8 +7,8 @@
     "url": "git+https://github.com/yoonjeongl/metube.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/init.js",
-    "assets": "webpack --config webpack.config.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack"
   },
   "author": "Yoong <goyoong33@gmail.com>",
   "license": "MIT",
