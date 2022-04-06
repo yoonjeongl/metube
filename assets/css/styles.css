@@ -301,9 +301,6 @@ input[type=submit],
   align-items: center;
   justify-content: space-between;
 }
-#videoContainer .videoControls .videoControls__play .videoControls__playBtn {
-  margin: 0px 15px;
-}
 #videoContainer .videoControls .videoControls__play .videoControls__time {
   font-size: 12px;
 }

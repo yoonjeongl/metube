@@ -8,7 +8,7 @@ const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const timeline = document.getElementById("timeline");
 const fullscreenBtn = document.getElementById("fullscreen");
-const fullscreenIcon = fullscreenBtn.querySelector("i");
+const fullscreenBtnIcon = fullscreenBtn.querySelector("i");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
 
@@ -24,7 +24,7 @@ const handlePlayClick = (e) => {
     } else{
         video.pause();
     }
-    playBtn.classList = video.paused ? "fas fa-play" : "fas fa-pause";
+    playBtnIcon.className = video.paused ? "fas fa-play" : "fas fa-pause";
 };
 
 const handleMuteClick = () => {
@@ -33,7 +33,7 @@ const handleMuteClick = () => {
     } else {
         video.muted = true;
     }
-    muteBtn.classList = video.muted ? "fas favolume-mute" : "fas fa-volume-up";
+    muteBtnIcon.className = video.muted ? "fas fa-volume-mute" : "fas fa-volume-up";
     volumeRange.value = video.muted ? 0 : video.volume;
 };
 
@@ -43,15 +43,15 @@ const handleVolumeChange = (event) => {
     } = event;
     video.volume = value;
     if( value === "0"){
-        video.muted = true;
-        muteBtn.classList = "fa-volume-up";
+        video.muted = false;
+        muteBtnIcon.className = "fas fa-volume-up";
     }
     if(!video.muted) {
-        video.muted = false;
-        muteBtn.classList = "fas favolume-mute";
-    } else { 
         video.muted = true;
-        muteBtn.classList = "fa-volume-up";
+        muteBtnIcon.className = "fas fa-volume-mute";
+    } else { 
+        video.muted = false;
+        muteBtnIcon.className = "fas fa-volume-up";
     }
 };
 
@@ -79,14 +79,14 @@ const handleTimelineChange = (event) => {
 };
 
 const handleFullscreen = () => {
-    const fullScreen = document.fullscreenElement;
-    if (fullScreen) {
+    const fullscreen = document.fullscreenElement;
+    if (fullscreen) {
         document.exitFullscreen();
-        fullscreenBtn.classList = "fas fa-expand";
+        fullscreenBtnIcon.classList = "fas fa-expand";
         
     } else{
         videoContainer.requestFullscreen();
-        fullscreenBtn.classList = "fas fa-compress";
+        fullscreenBtnIcon.classList = "fas fa-compress";
     }
 };
 
