@@ -81,7 +81,7 @@ export const postUpload = async(req, res) => {
     }catch (error){
         return res.status(400).render("upload", {pageTitle: "Upload Video", errorMessage:error._message,});
     };
-}
+};
 
 export const deleteVideo = async (req, res) => {
     const {
@@ -112,4 +112,15 @@ export const search = async (req, res) =>{
         }).populate("owner");
     }
     return res.render("search", {pageTitle: "Search", videos});
-} 
+};
+
+export const registerView = async(req, res) => {
+    const {id} = req.params;
+    const video = await Video.findById(id);
+    if(!video){
+        return res.status(404);
+    }
+    video.meta.views = video.meta.views + 1;
+    await video.save();
+    return res.status(200);
+};
