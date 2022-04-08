@@ -10,7 +10,7 @@ const handleDownload = async() => {
 
     const ffmpeg = createFFmpeg({ 
         corePath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js",
-        log: true
+        log: false
     });
     await ffmpeg.load();
 
@@ -39,6 +39,14 @@ const handleDownload = async() => {
     thumbA.download = "MyThumbnail.jpg";
     document.body.appendChild(thumbA);
     thumbA.click();
+
+    ffmpeg.FS("unlink", "recording.webm");
+    ffmpeg.FS("unlink", "output.mp4");
+    ffmpeg.FS("unlink",  "thumbnail.jpg");
+
+    URL.revokeObjectURL(mp4Url);
+    URL.revokeObjectURL(thumbUrl);
+    URL.revokeObjectURL(videoFile);
 };
 
 const handleStop = () =>
