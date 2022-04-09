@@ -129,5 +129,7 @@ export const registerView = async(req, res) => {
 };
 
 export const createComment = (req, res) => {
+    console.log(req.param);
+    console.log(req.body);
     return res.end();
 };
