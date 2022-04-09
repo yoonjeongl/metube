@@ -5,7 +5,8 @@ form {
   background-color: rgba($color: #000000, $alpha: 0.2);
   border-radius: 10px;
 }
-input:not(input[type="range"]) {
+input:not(input[type="range"]),
+input[type="submit"] {
   all: unset;
   padding: 15px 20px;
   border-radius: 5px;
@@ -23,9 +24,17 @@ input[type="submit"],
 .social__btn {
   border-radius: 5px;
   padding: 12px 20px;
-  background-color: $red;
-  text-align: center;
+  background-color: white !important;
+  color: rgba($color: $red, $alpha: 1) !important;
+  text-align: center !important;
   cursor: pointer;
   display: block;
-  max-width: 420px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
