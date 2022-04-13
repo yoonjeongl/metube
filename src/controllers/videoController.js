@@ -148,3 +148,21 @@ export const createComment = async (req, res) => {
     video.save();
     return res.status(201).json({ newCommentId: comment._id });
   };
+
+  export const deleteComment = async (req, res) => {
+    const {
+        body: { videoId, commentId },
+        session: { owner }
+    } = req;
+    const comment = await Comment.findById(commentId);
+    const video = await Video.findById(videoId);
+    // owner = await Comment.findById(user._id);
+    if ( String(comment.owner) === req.session.user._id ){
+        await Comment.findByIdAndDelete(commentId);
+    }
+    else{
+        alert("Not Authrized User!");
+        return res.sendStatus(403);
+    }
+    return res.end();
+  }
