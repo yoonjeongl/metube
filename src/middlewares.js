@@ -20,6 +20,7 @@ const s3VideoUploader = multerS3({
     s3: s3,
     bucket: "wowtubee/videos",
     acl: "public-read",
+    contentType: multerS3.AUTO_CONTENT_TYPE,
 });
 
 export const localsMiddleware = (req, res, next) => {
