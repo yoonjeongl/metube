@@ -57,7 +57,6 @@ export const postEdit = async (req, res) => {
     await Video.findByIdAndUpdate(id, {
         title, description, hashtags: Video.formatHashtags(hashtags),
     });
-    req.flash("ok", "Completed!");
     return res.redirect(`/${id}`);
 };
 
