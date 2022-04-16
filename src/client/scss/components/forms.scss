@@ -14,7 +14,7 @@ input[type="submit"] {
   background-color: black;
   margin-bottom: 5px;
   font-size: 16px;
-  color: white;
+  color: #cc3366;
   width: 90%;
   &::placeholder {
     color: rgba(255, 255, 255, 0.7);
@@ -24,7 +24,7 @@ input[type="submit"],
 .social__btn {
   border-radius: 5px;
   padding: 12px 20px;
-  background-color: white !important;
+  background-color: #cc3366 !important;
   color: rgba($color: $red, $alpha: 1) !important;
   text-align: center !important;
   cursor: pointer;
